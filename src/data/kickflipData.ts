@@ -12,6 +12,8 @@ export interface Member {
   nationality: string;
   flag: string;
   mbti: string;
+  emoji: string;
+  dorm: string;
   skateVibe: string;
   color: string;
   tagline: string;
@@ -22,21 +24,21 @@ export interface Member {
 export interface Track {
   id: number;
   title: string;
-  koreanTitle?: string;
-  type: 'Title' | 'B-Side' | 'Special';
+  koreanTitle: string;
+  type: 'Title' | 'Pre-Release' | 'B-Side';
   duration: string;
   tempo: string;
   vibe: string;
   desc: string;
-  synthTone: number; // frequency base for Web Audio synthesis
+  synthTone: number;
 }
 
 export const MEMBERS: Member[] = [
   {
     id: 'kyehoon',
     name: 'Kyehoon',
-    nativeName: '이계훈',
-    birthName: 'Lee Gye-hun',
+    nativeName: '계훈',
+    birthName: 'Lee Gye-hun (이계훈)',
     role: ['Leader', 'Main Rapper', 'Lead Dancer', 'Producer'],
     category: 'leader',
     subLine: 'hyung',
@@ -46,22 +48,25 @@ export const MEMBERS: Member[] = [
     nationality: 'South Korea',
     flag: '🇰🇷',
     mbti: 'ENFP',
+    emoji: '🦊',
+    dorm: 'Single room with manager',
     skateVibe: 'Hardflip & High-Speed Street Cruising',
-    color: '#ceff00', // Lime
-    tagline: '5-year JYP legendary trainee with unmatched flow and captain leadership.',
+    color: '#ceff00', // Neon Lime
+    tagline: '5-year JYP legendary trainee who placed 1st in the 12th Open Auditions and led on SBS LOUD.',
     facts: [
-      'Placed 1st in JYP 12th Open Auditions in 2016.',
-      'Trained for over 5 years before debuting as KickFlip’s fearless captain.',
-      'Participated in SBS survival program LOUD, gaining worldwide recognition for lyrical writing.',
-      'Known for writing his own punchy rap bars and composing beats.'
+      'Placed 1st in JYP 12th Open Auditions in 2016, training for over 5 years.',
+      'Trained alongside members of Stray Kids, ITZY, and BOY STORY.',
+      'Starred in SBS survival audition program LOUD, praised by J.Y. Park for songwriting and lyrics.',
+      'Former Def Dance Academy student with razor-sharp freestyle rap technique.',
+      'Dislikes spicy food; relieves stress by rolling down the car window and listening to music.'
     ],
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80'
+    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/KYEHOON-3-533x800.jpeg'
   },
   {
     id: 'amaru',
     name: 'Amaru',
-    nativeName: '光幸アマル',
-    birthName: 'Mitsuyuki Amaru',
+    nativeName: '아마루',
+    birthName: 'Mitsuyuki Amaru (光幸アマル)',
     role: ['Main Vocalist', 'Lead Rapper'],
     category: 'vocal',
     subLine: 'hyung',
@@ -71,22 +76,25 @@ export const MEMBERS: Member[] = [
     nationality: 'Japan',
     flag: '🇯🇵',
     mbti: 'INFP',
+    emoji: '🐻',
+    dorm: 'Single room with manager',
     skateVibe: '360 Pop Shuvit & Aerial Bowls',
     color: '#00f0ff', // Cyan
-    tagline: 'Soulful high notes combined with agile acrobatic street rhythm.',
+    tagline: 'Former YG trainee and LOUD standout delivering soaring high vocals with acrobatic agility.',
     facts: [
-      'Former competitive athlete who easily integrates acrobatic skills into stage performances.',
-      'Bilingual in Japanese and fluent Korean.',
-      'Known for powerful, emotionally charged vocal belts and fast cadence.',
-      'Passionate about skateboarding culture and streetwear sneakers.'
+      'Born in Misato, Saitama, Japan; his mother is a passionate fan of 2PM.',
+      'Former YG Entertainment trainee who trained alongside Haruto, Asahi, and Mashiho of TREASURE.',
+      'Competed on SBS LOUD and captivated fans with bilingual rap and vocal acrobatics.',
+      'Helped Keiju adjust to speaking Korean when they moved to Seoul.',
+      'Skilled in track & field, baseball, spinning plates, and chopping firewood; favorite food is sushi.'
     ],
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80'
+    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/AMARU-1-640x800.jpeg'
   },
   {
     id: 'donghwa',
     name: 'Donghwa',
-    nativeName: '이동화',
-    birthName: 'Lee Dong-hwa',
+    nativeName: '동화',
+    birthName: 'Lee Dong-hwa (이동화)',
     role: ['Main Dancer', 'Lead Vocalist'],
     category: 'dance',
     subLine: 'hyung',
@@ -96,22 +104,24 @@ export const MEMBERS: Member[] = [
     nationality: 'South Korea',
     flag: '🇰🇷',
     mbti: 'ENFJ',
+    emoji: '🐸',
+    dorm: 'Roommates with Minje',
     skateVibe: 'Grind Rails & Urban Freestyle Flow',
     color: '#ff1493', // Pink
-    tagline: 'The groove master whose razor-sharp precision commands the center stage.',
+    tagline: 'Passed JYP in 2018; a resilient dance prodigy whose popping precision rules the stage.',
     facts: [
-      'Master of popping, isolation, and hip-hop choreographies.',
-      'Creates dance breaks and freestyle transitions for KickFlip live stages.',
-      'Always brings radiant positive energy and encouragement to rehearsals.',
-      'Loves vintage skate hoodies and collecting vinyl records.'
+      'Passed JYP Entertainment auditions in February 2018 and renewed his trainee contract twice.',
+      'Specializes in choreography breakdowns, hip-hop isolations, and center dance breaks.',
+      'Wanted to be an archaeologist when he was a kid.',
+      'Known for his contagious positive vibe and creating personalized nicknames for members.'
     ],
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80'
+    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/DONGHWA-3-900x600.jpeg'
   },
   {
     id: 'juwang',
     name: 'Juwang',
-    nativeName: '장주왕',
-    birthName: 'Jang Ju-wang',
+    nativeName: '주왕',
+    birthName: 'Jang Ju-wang (장주왕)',
     role: ['Main Vocalist'],
     category: 'vocal',
     subLine: 'hyung',
@@ -121,47 +131,52 @@ export const MEMBERS: Member[] = [
     nationality: 'South Korea',
     flag: '🇰🇷',
     mbti: 'ISFP',
+    emoji: '🐹',
+    dorm: 'Roommates with Donghyeon',
     skateVibe: 'Sunset Cruiser & Chill Downhills',
     color: '#ffea00', // Yellow
-    tagline: 'Golden vocal chords delivering honeyed R&B runs and heartfelt sincerity.',
+    tagline: 'Born in Gyeongju and raised in Pohang; the soulful vocal anchor with honeyed R&B tone.',
     facts: [
-      'Has the widest vocal range in the group, hitting effortless falsettos and belts.',
-      'Plays acoustic and electric guitar for unplugged versions of KickFlip songs.',
-      'Often called the vocal anchor by JYP producers.',
-      'Enjoys photography and documenting the members behind the scenes.'
+      'Born in Gyeongju, Gyeongsangbuk-do, and grew up in the coastal city of Pohang.',
+      'Possesses an expansive vocal range with signature warm acoustic timbre and effortless falsetto.',
+      'Plays guitar and often provides unplugged acoustic accompaniments.',
+      'Representative emoji is 🐹 (Hamster); cherished as the gentle vocal anchor of KickFlip.'
     ],
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'
+    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/JUWANG-3-900x600.jpeg'
   },
   {
     id: 'minje',
     name: 'Minje',
-    nativeName: '최민제',
-    birthName: 'Choi Min-je',
+    nativeName: '민제',
+    birthName: 'Choi Min-je (최민제)',
     role: ['Visual', 'Lead Rapper', 'Dancer'],
     category: 'rap',
     subLine: 'maknae',
     birthday: 'May 12, 2006',
     age: 19,
     zodiac: 'Taurus',
-    nationality: 'South Korea',
-    flag: '🇰🇷',
-    mbti: 'ESTP',
+    nationality: 'Korean-New Zealander',
+    flag: '🇰🇷 🇳🇿',
+    mbti: 'INTP',
+    emoji: '🐺',
+    dorm: 'Roommates with Donghwa',
     skateVibe: 'Stairset Drops & Aggressive Ollies',
     color: '#ff4d00', // Orange-Red
-    tagline: 'Captivating camera aura, athletic dynamism and sharp rap accents.',
+    tagline: 'Born in New Zealand, raised in Suwon; bilingual English speaker, Hanlim graduate, and visual center.',
     facts: [
-      'Voted the visual center and photoshoot king of the group.',
-      'Outstanding athletic reflexes; excelled at track and sports in school.',
-      'His deep vocal tone adds edge and tension to verses.',
-      'Loves custom skate deck art and graffiti sticker bombing.'
+      'Born in New Zealand and grew up in Yeongtong-gu, Suwon, South Korea.',
+      'Attended Sanui Elementary, YeonMu Middle, and graduated from prestigious Hanlim Arts School.',
+      'Fluent in English and Korean; former student at WithBill Dance Studio.',
+      'Joined JYP Entertainment as a trainee in August 2021.',
+      'Specialties include basketball, rope double jumps, guitar, and custom calligraphy.'
     ],
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80'
+    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/MINJE-3-900x600.jpeg'
   },
   {
     id: 'keiju',
     name: 'Keiju',
-    nativeName: '岡本圭主',
-    birthName: 'Okamoto Keiju',
+    nativeName: '케이주',
+    birthName: 'Okamoto Keiju (岡本圭主)',
     role: ['Main Rapper', 'Main Dancer'],
     category: 'dance',
     subLine: 'maknae',
@@ -170,23 +185,26 @@ export const MEMBERS: Member[] = [
     zodiac: 'Libra',
     nationality: 'Japan',
     flag: '🇯🇵',
-    mbti: 'ESFP',
+    mbti: 'INFP',
+    emoji: '🐱',
+    dorm: 'Solo room!',
     skateVibe: 'Kickflip into Nollie Slide',
     color: '#9d00ff', // Electric Purple
-    tagline: 'Explosive stage presence with charismatic duality: pure joy off-stage, monster on-stage.',
+    tagline: 'Born in Tokyo; viral sensation from SBS LOUD and JTBC Stage K with electric stage charisma.',
     facts: [
-      'Fan-favorite contestant on SBS LOUD with viral performance stages.',
-      'Has natural groove and stage expression that captivates within seconds.',
-      'Fluent in Japanese and Korean with rapid-fire rap delivery.',
-      'The group’s mood maker whose bright laughter is infectious.'
+      'Born in Koto, Tokyo, Japan; has an older brother born in 2000.',
+      'Appeared on JTBC Stage K during the iKON episode, making waves for his natural groove.',
+      'Breakout star of SBS LOUD whose performance clips amassed millions of views worldwide.',
+      'Has his own solo room in the KickFlip dorm!',
+      'Scared of ghost stories and haunted houses; loves taking leisurely walks and gaming.'
     ],
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80'
+    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/KEIJU-3-533x800.jpeg'
   },
   {
     id: 'donghyeon',
     name: 'Donghyeon',
-    nativeName: '이동현',
-    birthName: 'Lee Dong-hyeon',
+    nativeName: '동현',
+    birthName: 'Lee Dong-hyeon (이동현)',
     role: ['Main Vocalist', 'Maknae'],
     category: 'vocal',
     subLine: 'maknae',
@@ -195,17 +213,20 @@ export const MEMBERS: Member[] = [
     zodiac: 'Pisces',
     nationality: 'South Korea',
     flag: '🇰🇷',
-    mbti: 'INFJ',
+    mbti: 'ISTJ',
+    emoji: '🐰',
+    dorm: 'Roommates with Juwang',
     skateVibe: 'Smooth Half-Pipe Transition',
     color: '#00ffaa', // Mint Green
-    tagline: 'The unstoppable golden maknae: youthful charm backed by powerhouse rock vocals.',
+    tagline: 'Daegu native, former ice hockey star (#99), 2-year class president, and golden rock-vocal maknae.',
     facts: [
-      'Former competitive ice hockey player before pursuing music.',
-      'Possesses a raw, emotive vocal texture reminiscent of indie-rock power vocalists.',
-      'Youngest member (Maknae) pampered and supported by all six older brothers.',
-      'Loves listening to alternative rock, playing video games, and skate gaming.'
+      'Born in Bongsan-dong, Jung-gu, Daegu, South Korea.',
+      'Former competitive ice hockey player who played for Daegu Sky Eagles sporting jersey #99.',
+      'Was elected middle school class president for 2 consecutive years; attends Hanlim Arts School.',
+      'Competed on SBS LOUD and impressed the judges with raw emotional rock vocals.',
+      'Hilariously admitted he is more scared of his mother than ghosts!'
     ],
-    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80'
+    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/DONGHYEON-3-900x600.jpeg'
   }
 ];
 
@@ -213,120 +234,119 @@ export const TRACKS: Track[] = [
   {
     id: 1,
     title: 'Mama Said',
-    koreanTitle: '마마 세드',
+    koreanTitle: '뭐가 되려고?',
     type: 'Title',
     duration: '3:12',
     tempo: '132 BPM',
     vibe: 'Skate Hip-Hop / Rebel Groove',
-    desc: 'Explosive debut title track driven by 808 sub-bass, snappy skate percussions, and rebellious catchy chorus.',
+    desc: 'Official debut title track driven by 808 sub-bass, snappy skate percussions, and rebellious catchy chorus asking "What are you trying to become?".',
     synthTone: 220
   },
   {
     id: 2,
+    title: 'Umm Great',
+    koreanTitle: '응 그래',
+    type: 'Pre-Release',
+    duration: '2:45',
+    tempo: '110 BPM',
+    vibe: 'Sunny Street Chill / Whistling Beat',
+    desc: 'Official pre-release single (Jan 6, 2025). Laid-back summer skate jam full of smiles, acoustic layers, and carefree attitude.',
+    synthTone: 261.63
+  },
+  {
+    id: 3,
     title: 'WARRIORS',
     koreanTitle: '워리어스',
     type: 'B-Side',
     duration: '3:05',
     tempo: '140 BPM',
     vibe: 'High-Voltage Cyber Bounce',
-    desc: 'Adrenaline-packed anthem highlighting synchronized choreography breaks and rapid fire rap exchanges.',
-    synthTone: 261.63
+    desc: 'Adrenaline-packed anthem highlighting synchronized choreography breaks and rapid fire rap exchanges from Kyehoon, Keiju, and Minje.',
+    synthTone: 293.66
   },
   {
-    id: 3,
+    id: 4,
     title: 'Knock Knock',
     koreanTitle: '똑똑',
     type: 'B-Side',
     duration: '2:58',
     tempo: '118 BPM',
     vibe: 'Catchy Pop-Rap Bounce',
-    desc: 'Playful urban rhythm with bouncy brass stabs and infectious vocal hooks.',
-    synthTone: 293.66
+    desc: 'Playful urban rhythm with bouncy brass stabs and infectious vocal hooks from Amaru and Juwang.',
+    synthTone: 329.63
   },
   {
-    id: 4,
+    id: 5,
     title: 'Like A Monster',
     koreanTitle: '라이크 어 몬스터',
     type: 'B-Side',
     duration: '3:20',
     tempo: '136 BPM',
-    vibe: 'Dark Trap & Vocal Roar',
-    desc: 'Aggressive brass synths and haunting vocal harmonies showcasing KickFlip’s fierce performance energy.',
-    synthTone: 329.63
-  },
-  {
-    id: 5,
-    title: 'Umm Great',
-    koreanTitle: '음 그레이트',
-    type: 'B-Side',
-    duration: '2:45',
-    tempo: '110 BPM',
-    vibe: 'Sunny Street Chill',
-    desc: 'Easy-listening summer skate jam full of smiles, acoustic guitar layers, and melodic whistling.',
+    vibe: 'Dark Trap & Fierce Vocals',
+    desc: 'Aggressive brass synths and haunting vocal harmonies showcasing KickFlip’s powerful performance energy.',
     synthTone: 349.23
   },
   {
     id: 6,
     title: 'See You On Tomorrow',
-    koreanTitle: '내일 또 만나',
+    koreanTitle: '내일에서 만나',
     type: 'B-Side',
     duration: '3:35',
     tempo: '92 BPM',
     vibe: 'Sentimental Sunset Pop',
-    desc: 'A warm, uplifting farewell track for sunset skate sessions, expressing gratitude to fans.',
+    desc: 'A warm, uplifting closing track for sunset skate sessions, expressing heartfelt gratitude to fans (WeFlip).',
     synthTone: 392.00
-  },
-  {
-    id: 7,
-    title: 'From KickFlip, To WeFlip',
-    koreanTitle: '위플립에게',
-    type: 'Special',
-    duration: '3:40',
-    tempo: '88 BPM',
-    vibe: 'Fan Dedication Ballad',
-    desc: 'Heartfelt acoustic tribute dedicated entirely to their official fandom WeFlip (위플립).',
-    synthTone: 440.00
   }
 ];
+
+export const OFFICIAL_LINKS = {
+  website: 'https://www.kick-flip.com/ko',
+  youtube: 'https://www.youtube.com/@kickflip_jype',
+  instagram: 'https://www.instagram.com/kickflip_jype/',
+  membersInstagram: 'https://www.instagram.com/kickflip_kickflip/',
+  twitter: 'https://x.com/kickflip_jype',
+  tiktok: 'https://www.tiktok.com/@kickflip_jype',
+  weibo: 'https://weibo.com/u/7967473831'
+};
 
 export const QUIZ_QUESTIONS = [
   {
     id: 1,
-    question: 'How do you spend your perfect weekend afternoon?',
+    question: 'How do you spend your ideal weekend afternoon?',
     options: [
-      { text: 'Leading a group hangout and hitting the city street skate park', memberId: 'kyehoon' },
-      { text: 'Acrobatic sports, outdoor training, and checking out new sneaker drops', memberId: 'amaru' },
-      { text: 'Dancing in the studio, perfecting choreography, and listening to vinyl', memberId: 'donghwa' },
-      { text: 'Chilling at a café with an acoustic guitar and taking retro photos', memberId: 'juwang' },
-      { text: 'Testing extreme skate tricks, taking photos, and hanging with friends', memberId: 'minje' },
-      { text: 'Making everyone laugh, eating good food, and freestyling to new tracks', memberId: 'keiju' },
-      { text: 'Gaming with friends, listening to alternative rock, and relaxing', memberId: 'donghyeon' }
+      { text: 'Leading a crew meetup at the city street skate park and writing rap bars', memberId: 'kyehoon' },
+      { text: 'Acrobatic outdoor sports, eating sushi, and checking out new sneaker drops', memberId: 'amaru' },
+      { text: 'Dancing in the studio, perfecting choreography, and giving friends nicknames', memberId: 'donghwa' },
+      { text: 'Chilling with acoustic guitar, humming R&B melodies, and capturing photos', memberId: 'juwang' },
+      { text: 'Shooting basketball hoops, double jump-roping, and speaking English with pals', memberId: 'minje' },
+      { text: 'Taking a peaceful walk in Tokyo style, gaming, and avoiding scary stories', memberId: 'keiju' },
+      { text: 'Watching intense ice hockey matches, rocking out to alternative music, and chilling', memberId: 'donghyeon' }
     ]
   },
   {
     id: 2,
     question: 'What is your signature fashion style on the street?',
     options: [
-      { text: 'Oversized streetwear hoodie with silver chain accessories and beanie', memberId: 'kyehoon' },
-      { text: 'Techwear cargo pants with high-top skate sneakers and windbreaker', memberId: 'amaru' },
-      { text: 'Vintage leather jacket, baggy denim, and stylish bucket hat', memberId: 'donghwa' },
-      { text: 'Minimalist knitwear, clean aesthetics, and neutral Earth tones', memberId: 'juwang' },
-      { text: 'Bold neon graphics, custom painted denim, and statement eyewear', memberId: 'minje' },
-      { text: 'Sporty colorful varsity jacket with retro snapback cap', memberId: 'keiju' },
-      { text: 'Grunge flannel over graphic tee and relaxed skate shorts', memberId: 'donghyeon' }
+      { text: 'Oversized streetwear hoodie with silver chain accessories and beanie 🦊', memberId: 'kyehoon' },
+      { text: 'Techwear cargo pants with high-top skate sneakers and windbreaker 🐻', memberId: 'amaru' },
+      { text: 'Vintage leather jacket, baggy denim, and stylish bucket hat 🐸', memberId: 'donghwa' },
+      { text: 'Minimalist knitwear, clean aesthetics, and neutral Earth tones 🐹', memberId: 'juwang' },
+      { text: 'Bold neon streetwear, custom painted denim, and statement eyewear 🐺', memberId: 'minje' },
+      { text: 'Sporty colorful varsity jacket with retro snapback cap 🐱', memberId: 'keiju' },
+      { text: 'Casual sports jersey #99, relaxed skate shorts, and skate shoes 🐰', memberId: 'donghyeon' }
     ]
   },
   {
     id: 3,
-    question: 'Which musical flavor in KickFlip’s discography resonates with you most?',
+    question: 'Which track from debut mini-album <Flip it, Kick it!> speaks to your soul?',
     options: [
-      { text: 'Aggressive 808s and technical, fast-paced rap flow ("Mama Said")', memberId: 'kyehoon' },
-      { text: 'High soaring vocal belts mixed with energetic rap bridge', memberId: 'amaru' },
-      { text: 'Unstoppable dance-break rhythm that forces you to move ("WARRIORS")', memberId: 'donghwa' },
-      { text: 'Soulful acoustic R&B vocals and emotional falsetto', memberId: 'juwang' },
-      { text: 'Raw, punchy attitude with deep-toned hook delivery', memberId: 'minje' },
-      { text: 'Hyper-energetic party bounce with infectious groove ("Knock Knock")', memberId: 'keiju' },
-      { text: 'Heartfelt emotional rock ballad dedicated to fans ("To WeFlip")', memberId: 'donghyeon' }
+      { text: 'Rebellious skate-hop title track "Mama Said (뭐가 되려고?)"', memberId: 'kyehoon' },
+      { text: 'Carefree whistling groove "Umm Great (응 그래)"', memberId: 'amaru' },
+      { text: 'High-voltage dance break anthem "WARRIORS"', memberId: 'donghwa' },
+      { text: 'Smooth, soul-soothing runs on "Knock Knock"', memberId: 'juwang' },
+      { text: 'Dark trap & fierce verses in "Like A Monster"', memberId: 'minje' },
+      { text: 'Explosive party rap rhythm and smile-inducing beats', memberId: 'keiju' },
+      { text: 'Sentimental sunset farewell ballad "See You On Tomorrow (내일에서 만나)"', memberId: 'donghyeon' }
     ]
   }
 ];
@@ -337,35 +357,35 @@ export const INITIAL_FAN_MESSAGES = [
     author: 'SkateQueen_Mia',
     location: 'Seoul, KR',
     bias: 'Kyehoon',
-    text: '5 years of waiting was so worth it! Kyehoon’s leadership in KickFlip is unreal. WEFLIP FOREVER! 🛹🔥',
+    text: '5 years of waiting was so worth it! Kyehoon’s leadership and lyricism in "Mama Said" is unreal. WEFLIP FOREVER! 🛹🦊',
     time: '10 mins ago',
-    likes: 42
+    likes: 58
   },
   {
     id: 2,
     author: 'TokyoRider_Ren',
     location: 'Tokyo, JP',
     bias: 'Keiju & Amaru',
-    text: 'Keiju and Amaru making us so proud! The acrobatic moves on Mama Said stage blew my mind!',
+    text: 'Keiju and Amaru making Japan and Korea proud! The acrobatic energy in "WARRIORS" gave me chills!',
     time: '35 mins ago',
-    likes: 89
+    likes: 124
   },
   {
     id: 3,
     author: 'JuwangVocalHeaven',
-    location: 'Los Angeles, USA',
+    location: 'Pohang, KR',
     bias: 'Juwang',
-    text: 'Juwang’s high note in "Like A Monster" literally cured my sadness today. Streaming 24/7! 💛',
+    text: 'Juwang’s voice in "See You On Tomorrow" is absolute pure honey 🐹💛 JYP vocal treasure!',
     time: '2 hours ago',
-    likes: 67
+    likes: 83
   },
   {
     id: 4,
-    author: 'DonghyeonMaknaeLove',
-    location: 'Almaty, KZ',
+    author: 'DaeguHockeyFan',
+    location: 'Daegu, KR',
     bias: 'Donghyeon',
-    text: 'Donghyeon hockey boy turned into rock vocal powerhouse! We are so proud of our golden maknae! 💚',
+    text: 'Daegu Sky Eagles #99 turned into JYP powerhouse vocalist! Donghyeon our golden maknae fighting! 🏒🐰',
     time: '3 hours ago',
-    likes: 104
+    likes: 142
   }
 ];

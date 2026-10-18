@@ -9,6 +9,7 @@ interface VideoVaultProps {
 interface VideoItem {
   id: string;
   title: string;
+  koreanTitle: string;
   category: string;
   duration: string;
   views: string;
@@ -23,29 +24,32 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
     {
       id: '1',
       title: 'KickFlip "Mama Said" Official MV',
-      category: 'Official MV',
-      duration: '3:25',
-      views: '12.4M Views',
-      thumbnail: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=700&q=80',
-      youtubeId: 'dQw4w9WgXcQ' // placeholder standard video ID or embed
+      koreanTitle: '뭐가 되려고? (Mama Said) M/V',
+      category: 'Official Debut MV',
+      duration: '3:22',
+      views: 'Official Release // JYP',
+      thumbnail: 'https://kprofiles.com/wp-content/uploads/2025/01/KickFlip-4-900x600.jpeg',
+      youtubeId: 'JY0UTOgh8M8'
     },
     {
       id: '2',
-      title: 'KickFlip "Mama Said" Dance Practice (Skate Park Ver.)',
-      category: 'Choreography',
-      duration: '3:18',
-      views: '5.2M Views',
-      thumbnail: 'https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=700&q=80',
-      youtubeId: 'dQw4w9WgXcQ'
+      title: 'KickFlip "Umm Great" Official M/V',
+      koreanTitle: '응 그래 (Umm Great) M/V',
+      category: 'Pre-Release Single',
+      duration: '2:52',
+      views: 'Pre-Debut Drop // JYP',
+      thumbnail: 'https://kprofiles.com/wp-content/uploads/2025/01/KickFlip-1-2-scaled.jpeg',
+      youtubeId: 'L__ITOj-g8E'
     },
     {
       id: '3',
-      title: 'KickFlip Debut Showcase & LOUD Trainee Journey',
-      category: 'Behind The Scenes',
-      duration: '18:40',
-      views: '3.8M Views',
-      thumbnail: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=700&q=80',
-      youtubeId: 'dQw4w9WgXcQ'
+      title: 'KickFlip "KICK OFF THE WALL" Intro Film',
+      koreanTitle: 'KickFlip Debut Introductory Film',
+      category: 'Debut Trainee Film',
+      duration: '4:15',
+      views: 'JYP Official',
+      thumbnail: 'https://kprofiles.com/wp-content/uploads/2025/01/KYEHOON-3-533x800.jpeg',
+      youtubeId: 'JY0UTOgh8M8'
     }
   ];
 
@@ -63,7 +67,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
     }}>
       <div style={{ textAlign: 'center', marginBottom: '50px' }}>
         <div className="sticker-tag sticker-lime" style={{ marginBottom: '14px' }}>
-          <Film size={14} /> OFFICIAL STAGES & MVS
+          <Film size={14} /> OFFICIAL JYP STAGES & MVS
         </div>
         <h2 style={{
           fontFamily: 'Syne, sans-serif',
@@ -76,7 +80,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
           VIDEO <span style={{ color: 'var(--neon-lime)' }}>VAULT</span>
         </h2>
         <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
-          High-octane visual experiences, dance practice breakdowns, and behind-the-scenes skate sessions.
+          Official YouTube music videos and teasers direct from JYP Entertainment. Click to play inside the theater modal!
         </p>
       </div>
 
@@ -101,7 +105,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
           >
             <div style={{
               position: 'relative',
-              height: '210px',
+              height: '220px',
               borderRadius: '12px',
               overflow: 'hidden',
               marginBottom: '16px',
@@ -114,7 +118,6 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
                   width: '100%',
                   height: '100%',
                   objectFit: 'cover',
-                  filter: 'contrast(1.1)',
                   transition: 'transform 0.4s ease',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.08)')}
@@ -125,7 +128,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'rgba(0, 0, 0, 0.35)',
+                background: 'rgba(0, 0, 0, 0.4)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -150,7 +153,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
                 position: 'absolute',
                 bottom: '10px',
                 right: '10px',
-                background: 'rgba(0, 0, 0, 0.8)',
+                background: 'rgba(0, 0, 0, 0.85)',
                 padding: '4px 8px',
                 borderRadius: '4px',
                 fontSize: '0.75rem',
@@ -185,6 +188,9 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
               }}>
                 {vid.title}
               </h3>
+              <div style={{ color: 'var(--neon-pink)', fontSize: '0.85rem', fontWeight: 700, marginTop: '2px' }}>
+                {vid.koreanTitle}
+              </div>
             </div>
           </div>
         ))}
@@ -195,7 +201,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
         <div style={{
           position: 'fixed',
           inset: 0,
-          background: 'rgba(0, 0, 0, 0.9)',
+          background: 'rgba(0, 0, 0, 0.92)',
           backdropFilter: 'blur(20px)',
           display: 'flex',
           alignItems: 'center',
@@ -209,7 +215,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
               background: '#12141f',
               border: '2px solid var(--neon-lime)',
               borderRadius: '20px',
-              maxWidth: '800px',
+              maxWidth: '850px',
               width: '100%',
               padding: '24px',
               position: 'relative',
@@ -217,9 +223,14 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-              <h3 style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: '1.3rem', color: '#fff' }}>
-                {activeVideo.title}
-              </h3>
+              <div>
+                <h3 style={{ fontFamily: 'Syne, sans-serif', fontWeight: 800, fontSize: '1.3rem', color: '#fff' }}>
+                  {activeVideo.title}
+                </h3>
+                <span style={{ color: 'var(--neon-lime)', fontSize: '0.85rem', fontWeight: 700 }}>
+                  {activeVideo.koreanTitle}
+                </span>
+              </div>
               <button
                 onClick={() => setActiveVideo(null)}
                 style={{
@@ -251,7 +262,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
             }}>
               <iframe
                 title={activeVideo.title}
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?autoplay=1`}
                 style={{
                   position: 'absolute',
                   top: 0,
@@ -267,10 +278,10 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                Official Release by JYP Entertainment • 2025
+                Official Music Video • JYP Entertainment
               </span>
               <a
-                href="https://www.youtube.com/@JYPentertainment"
+                href={`https://www.youtube.com/watch?v=${activeVideo.youtubeId}`}
                 target="_blank"
                 rel="noreferrer"
                 style={{

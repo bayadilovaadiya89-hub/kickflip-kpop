@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MEMBERS, type Member } from '../data/kickflipData';
-import { Calendar, Compass, Shield, Award, X } from 'lucide-react';
+import { Calendar, Compass, Shield, Award, Home, X } from 'lucide-react';
 import { playSkateSound } from '../utils/audioEngine';
 
 interface MembersSectionProps {
@@ -45,15 +45,15 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
           letterSpacing: '-0.02em',
           marginBottom: '12px',
         }}>
-          MEET THE <span style={{ color: 'var(--neon-lime)' }}>MEMBERS</span>
+          OFFICIAL <span style={{ color: 'var(--neon-lime)' }}>MEMBERS PROFILE</span>
         </h2>
         <p style={{
           color: 'var(--text-muted)',
-          fontSize: '1.1rem',
-          maxWidth: '620px',
+          fontSize: '1.05rem',
+          maxWidth: '650px',
           margin: '0 auto',
         }}>
-          Click on any member to inspect their trainee journey, MBTI, signature skate trick, and official JYP profile facts.
+          Official JYP Entertainment concept photos ("KICK OFF THE WALL Pt. 1"). Click on any member to inspect their trainee journey, MBTI, dorm arrangement, and personal trivia.
         </p>
 
         {/* Filter Tabs */}
@@ -127,7 +127,7 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
               {/* Member Card Image Banner */}
               <div style={{
                 position: 'relative',
-                height: '310px',
+                height: '320px',
                 borderRadius: '12px',
                 overflow: 'hidden',
                 marginBottom: '18px',
@@ -140,25 +140,22 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    filter: 'grayscale(20%) contrast(1.1)',
-                    transition: 'transform 0.4s ease, filter 0.4s ease',
+                    transition: 'transform 0.4s ease',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'scale(1.06)';
-                    e.currentTarget.style.filter = 'grayscale(0%) contrast(1.15)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'scale(1)';
-                    e.currentTarget.style.filter = 'grayscale(20%) contrast(1.1)';
                   }}
                 />
 
-                {/* Country Flag Badge */}
+                {/* Country Flag Badge & Emoji */}
                 <div style={{
                   position: 'absolute',
                   top: '12px',
                   left: '12px',
-                  background: 'rgba(0, 0, 0, 0.75)',
+                  background: 'rgba(0, 0, 0, 0.8)',
                   backdropFilter: 'blur(6px)',
                   padding: '4px 10px',
                   borderRadius: '6px',
@@ -170,6 +167,7 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
                 }}>
                   <span>{member.flag}</span>
                   <span style={{ color: '#fff', fontSize: '0.75rem' }}>{member.nationality}</span>
+                  <span style={{ fontSize: '1rem', marginLeft: '4px' }}>{member.emoji}</span>
                 </div>
 
                 {/* Color Glow Indicator */}
@@ -198,13 +196,16 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
                   fontSize: '1.6rem',
                   color: '#fff',
                   letterSpacing: '-0.02em',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
                 }}>
-                  {member.name}
+                  {member.name} <span>{member.emoji}</span>
                 </h3>
                 <span style={{
                   color: 'var(--neon-lime)',
                   fontWeight: 800,
-                  fontSize: '1rem',
+                  fontSize: '1.05rem',
                   fontFamily: 'Space Grotesk, sans-serif',
                 }}>
                   {member.nativeName}
@@ -258,7 +259,7 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
               color: 'var(--text-muted)',
             }}>
               <span>MBTI: <strong style={{ color: '#fff' }}>{member.mbti}</strong></span>
-              <span style={{ color: 'var(--cyber-cyan)', fontWeight: 600 }}>Click for Bio →</span>
+              <span style={{ color: 'var(--cyber-cyan)', fontWeight: 600 }}>Trainee Bio & Facts →</span>
             </div>
           </div>
         ))}
@@ -269,7 +270,7 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
         <div style={{
           position: 'fixed',
           inset: 0,
-          background: 'rgba(0, 0, 0, 0.85)',
+          background: 'rgba(0, 0, 0, 0.88)',
           backdropFilter: 'blur(16px)',
           display: 'flex',
           alignItems: 'center',
@@ -283,7 +284,7 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
               background: '#13151f',
               border: `2px solid ${selectedMember.color}`,
               borderRadius: '20px',
-              maxWidth: '650px',
+              maxWidth: '680px',
               width: '100%',
               maxHeight: '90vh',
               overflowY: 'auto',
@@ -317,8 +318,8 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
             {/* Modal Header */}
             <div style={{ display: 'flex', gap: '20px', alignItems: 'center', marginBottom: '24px' }}>
               <div style={{
-                width: '90px',
-                height: '90px',
+                width: '100px',
+                height: '110px',
                 borderRadius: '16px',
                 overflow: 'hidden',
                 flexShrink: 0,
@@ -327,16 +328,20 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
                 <img src={selectedMember.avatar} alt={selectedMember.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: '2rem', fontWeight: 900, color: '#fff' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <h3 style={{ fontFamily: 'Syne, sans-serif', fontSize: '2.1rem', fontWeight: 900, color: '#fff' }}>
                     {selectedMember.name}
                   </h3>
+                  <span style={{ fontSize: '1.4rem' }}>{selectedMember.emoji}</span>
                   <span style={{ fontSize: '1.2rem', color: selectedMember.color, fontWeight: 800 }}>
-                    {selectedMember.nativeName}
+                    ({selectedMember.nativeName})
                   </span>
                 </div>
-                <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginTop: '4px' }}>
                   Birth Name: <strong style={{ color: '#fff' }}>{selectedMember.birthName}</strong> {selectedMember.flag}
+                </div>
+                <div style={{ color: 'var(--neon-lime)', fontSize: '0.82rem', fontWeight: 700, marginTop: '2px' }}>
+                  Positions: {selectedMember.role.join(' • ')}
                 </div>
               </div>
             </div>
@@ -346,19 +351,31 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
               gap: '12px',
-              marginBottom: '24px',
+              marginBottom: '20px',
             }}>
               <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '12px', borderRadius: '10px' }}>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}><Calendar size={12} /> Birthday</div>
-                <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{selectedMember.birthday}</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Calendar size={12} /> Birthday
+                </div>
+                <div style={{ fontWeight: 700, fontSize: '0.88rem' }}>{selectedMember.birthday}</div>
               </div>
               <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '12px', borderRadius: '10px' }}>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}><Compass size={12} /> Zodiac & MBTI</div>
-                <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>{selectedMember.zodiac} // {selectedMember.mbti}</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Compass size={12} /> Zodiac & MBTI
+                </div>
+                <div style={{ fontWeight: 700, fontSize: '0.88rem' }}>{selectedMember.zodiac} // {selectedMember.mbti}</div>
               </div>
               <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '12px', borderRadius: '10px' }}>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}><Shield size={12} /> Sub-Line</div>
-                <div style={{ fontWeight: 700, fontSize: '0.9rem', textTransform: 'capitalize' }}>{selectedMember.subLine} Line</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Shield size={12} /> Sub-Line
+                </div>
+                <div style={{ fontWeight: 700, fontSize: '0.88rem', textTransform: 'capitalize' }}>{selectedMember.subLine} Line</div>
+              </div>
+              <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '12px', borderRadius: '10px' }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Home size={12} /> Dorm Setup
+                </div>
+                <div style={{ fontWeight: 700, fontSize: '0.82rem' }}>{selectedMember.dorm}</div>
               </div>
             </div>
 
@@ -368,12 +385,12 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
               borderRadius: '12px',
               background: 'rgba(206, 255, 0, 0.08)',
               border: '1px solid rgba(206, 255, 0, 0.25)',
-              marginBottom: '24px',
+              marginBottom: '20px',
             }}>
               <div style={{ fontSize: '0.75rem', color: 'var(--neon-lime)', fontWeight: 800, textTransform: 'uppercase' }}>
                 🛹 Signature Skate Trick / Urban Vibe
               </div>
-              <div style={{ fontWeight: 700, fontSize: '1rem', color: '#fff', marginTop: '4px' }}>
+              <div style={{ fontWeight: 700, fontSize: '0.98rem', color: '#fff', marginTop: '4px' }}>
                 {selectedMember.skateVibe}
               </div>
             </div>
@@ -390,7 +407,7 @@ export const MembersSection: React.FC<MembersSectionProps> = ({ soundEnabled }) 
                 gap: '8px'
               }}>
                 <Award size={18} color="var(--neon-lime)" />
-                Key Trainee Achievements & Facts
+                Official Trainee History & Verified Facts
               </div>
               <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {selectedMember.facts.map((fact, idx) => (

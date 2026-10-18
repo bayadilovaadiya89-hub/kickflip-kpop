@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowUp, Heart } from 'lucide-react';
+import { ArrowUp, Heart, ExternalLink } from 'lucide-react';
 import { playSkateSound } from '../utils/audioEngine';
+import { OFFICIAL_LINKS } from '../data/kickflipData';
 
 interface FooterProps {
   soundEnabled: boolean;
@@ -63,19 +64,23 @@ export const Footer: React.FC<FooterProps> = ({ soundEnabled }) => {
                 KICKFLIP <span style={{ color: 'var(--neon-lime)' }}>// 킥플립</span>
               </span>
             </div>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: '420px', lineHeight: 1.5 }}>
-              Dedicated to KickFlip & WeFlip worldwide. Formed under JYP Entertainment. Debut Mini-Album &lt;Flip it, Kick it!&gt;.
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', maxWidth: '440px', lineHeight: 1.5 }}>
+              Dedicated to <strong>KickFlip (KFP)</strong> & <strong>WeFlip (위플립)</strong> worldwide. 
+              Formed under JYP Entertainment. Debut Mini-Album &lt;Flip it, Kick it!&gt;.
             </p>
+            <div style={{ marginTop: '8px', fontSize: '0.82rem', color: 'var(--neon-lime)' }}>
+              Follow official: <a href={OFFICIAL_LINKS.instagram} target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>@kickflip_jype</a> & <a href={OFFICIAL_LINKS.membersInstagram} target="_blank" rel="noreferrer" style={{ color: '#fff', textDecoration: 'underline' }}>@kickflip_kickflip</a>
+            </div>
           </div>
 
           {/* Social Links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            {/* YouTube SVG */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+            {/* YouTube */}
             <a
-              href="https://www.youtube.com/@JYPentertainment"
+              href={OFFICIAL_LINKS.youtube}
               target="_blank"
               rel="noreferrer"
-              title="Official YouTube"
+              title="Official YouTube: @kickflip_jype"
               style={{
                 width: '42px',
                 height: '42px',
@@ -103,12 +108,12 @@ export const Footer: React.FC<FooterProps> = ({ soundEnabled }) => {
               </svg>
             </a>
 
-            {/* X / Twitter SVG */}
+            {/* X / Twitter */}
             <a
-              href="https://twitter.com/jypnation"
+              href={OFFICIAL_LINKS.twitter}
               target="_blank"
               rel="noreferrer"
-              title="Official X / Twitter"
+              title="Official X: @kickflip_jype"
               style={{
                 width: '42px',
                 height: '42px',
@@ -136,12 +141,12 @@ export const Footer: React.FC<FooterProps> = ({ soundEnabled }) => {
               </svg>
             </a>
 
-            {/* Instagram SVG */}
+            {/* Instagram */}
             <a
-              href="https://instagram.com/jypentertainment"
+              href={OFFICIAL_LINKS.instagram}
               target="_blank"
               rel="noreferrer"
-              title="Official Instagram"
+              title="Official Instagram: @kickflip_jype"
               style={{
                 width: '42px',
                 height: '42px',
@@ -171,6 +176,36 @@ export const Footer: React.FC<FooterProps> = ({ soundEnabled }) => {
               </svg>
             </a>
 
+            {/* Official Website */}
+            <a
+              href={OFFICIAL_LINKS.website}
+              target="_blank"
+              rel="noreferrer"
+              title="Official Website: kick-flip.com"
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '10px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'var(--skate-yellow)';
+                e.currentTarget.style.color = 'var(--skate-yellow)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.color = '#fff';
+              }}
+            >
+              <ExternalLink size={18} />
+            </a>
 
             {/* Back to top button */}
             <button
@@ -211,10 +246,10 @@ export const Footer: React.FC<FooterProps> = ({ soundEnabled }) => {
           color: 'var(--text-muted)',
         }}>
           <div>
-            © 2025-2026 KickFlip Fan Portal. Group and original music belong to <strong>JYP Entertainment</strong>.
+            © 2025 KickFlip (KFP). Official intellectual property and music belong to <strong>JYP Entertainment</strong>.
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            Crafted with <Heart size={14} color="var(--neon-pink)" fill="var(--neon-pink)" /> for WeFlip
+            Built with <Heart size={14} color="var(--neon-pink)" fill="var(--neon-pink)" /> for WeFlip
           </div>
         </div>
       </div>
