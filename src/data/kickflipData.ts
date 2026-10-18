@@ -33,6 +33,10 @@ export interface Track {
   synthTone: number;
 }
 
+const BASE = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+export const GROUP_BANNER_URL = `${BASE}images/group-banner.jpg`;
+export const GROUP_TEASER_URL = `${BASE}images/group-teaser.jpg`;
+
 export const MEMBERS: Member[] = [
   {
     id: 'kyehoon',
@@ -60,7 +64,7 @@ export const MEMBERS: Member[] = [
       'Former Def Dance Academy student with razor-sharp freestyle rap technique.',
       'Dislikes spicy food; relieves stress by rolling down the car window and listening to music.'
     ],
-    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/KYEHOON-3-533x800.jpeg'
+    avatar: `${BASE}images/members/kyehoon.jpg`
   },
   {
     id: 'amaru',
@@ -88,7 +92,7 @@ export const MEMBERS: Member[] = [
       'Helped Keiju adjust to speaking Korean when they moved to Seoul.',
       'Skilled in track & field, baseball, spinning plates, and chopping firewood; favorite food is sushi.'
     ],
-    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/AMARU-1-640x800.jpeg'
+    avatar: `${BASE}images/members/amaru.jpg`
   },
   {
     id: 'donghwa',
@@ -115,7 +119,7 @@ export const MEMBERS: Member[] = [
       'Wanted to be an archaeologist when he was a kid.',
       'Known for his contagious positive vibe and creating personalized nicknames for members.'
     ],
-    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/DONGHWA-3-900x600.jpeg'
+    avatar: `${BASE}images/members/donghwa.jpg`
   },
   {
     id: 'juwang',
@@ -142,7 +146,7 @@ export const MEMBERS: Member[] = [
       'Plays guitar and often provides unplugged acoustic accompaniments.',
       'Representative emoji is 🐹 (Hamster); cherished as the gentle vocal anchor of KickFlip.'
     ],
-    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/JUWANG-3-900x600.jpeg'
+    avatar: `${BASE}images/members/juwang.jpg`
   },
   {
     id: 'minje',
@@ -170,7 +174,7 @@ export const MEMBERS: Member[] = [
       'Joined JYP Entertainment as a trainee in August 2021.',
       'Specialties include basketball, rope double jumps, guitar, and custom calligraphy.'
     ],
-    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/MINJE-3-900x600.jpeg'
+    avatar: `${BASE}images/members/minje.jpg`
   },
   {
     id: 'keiju',
@@ -198,7 +202,7 @@ export const MEMBERS: Member[] = [
       'Has his own solo room in the KickFlip dorm!',
       'Scared of ghost stories and haunted houses; loves taking leisurely walks and gaming.'
     ],
-    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/KEIJU-3-533x800.jpeg'
+    avatar: `${BASE}images/members/keiju.jpg`
   },
   {
     id: 'donghyeon',
@@ -226,7 +230,7 @@ export const MEMBERS: Member[] = [
       'Competed on SBS LOUD and impressed the judges with raw emotional rock vocals.',
       'Hilariously admitted he is more scared of his mother than ghosts!'
     ],
-    avatar: 'https://kprofiles.com/wp-content/uploads/2025/01/DONGHYEON-3-900x600.jpeg'
+    avatar: `${BASE}images/members/donghyeon.jpg`
   }
 ];
 

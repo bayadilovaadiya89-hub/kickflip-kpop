@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Play, Film, X, ExternalLink } from 'lucide-react';
 import { playSkateSound } from '../utils/audioEngine';
+import { GROUP_TEASER_URL, GROUP_BANNER_URL, MEMBERS } from '../data/kickflipData';
 
 interface VideoVaultProps {
   soundEnabled: boolean;
@@ -28,7 +29,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
       category: 'Official Debut MV',
       duration: '3:22',
       views: 'Official Release // JYP',
-      thumbnail: 'https://kprofiles.com/wp-content/uploads/2025/01/KickFlip-4-900x600.jpeg',
+      thumbnail: GROUP_TEASER_URL,
       youtubeId: 'JY0UTOgh8M8'
     },
     {
@@ -38,7 +39,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
       category: 'Pre-Release Single',
       duration: '2:52',
       views: 'Pre-Debut Drop // JYP',
-      thumbnail: 'https://kprofiles.com/wp-content/uploads/2025/01/KickFlip-1-2-scaled.jpeg',
+      thumbnail: GROUP_BANNER_URL,
       youtubeId: 'L__ITOj-g8E'
     },
     {
@@ -48,7 +49,7 @@ export const VideoVault: React.FC<VideoVaultProps> = ({ soundEnabled }) => {
       category: 'Debut Trainee Film',
       duration: '4:15',
       views: 'JYP Official',
-      thumbnail: 'https://kprofiles.com/wp-content/uploads/2025/01/KYEHOON-3-533x800.jpeg',
+      thumbnail: MEMBERS[0].avatar,
       youtubeId: 'JY0UTOgh8M8'
     }
   ];

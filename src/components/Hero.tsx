@@ -1,7 +1,7 @@
 import React from 'react';
 import { Play, Sparkles, Flame, Disc, ExternalLink } from 'lucide-react';
 import { playSkateSound } from '../utils/audioEngine';
-import { OFFICIAL_LINKS } from '../data/kickflipData';
+import { OFFICIAL_LINKS, GROUP_BANNER_URL } from '../data/kickflipData';
 
 interface HeroProps {
   soundEnabled: boolean;
@@ -166,7 +166,7 @@ export const Hero: React.FC<HeroProps> = ({ soundEnabled }) => {
                 background: '#151722',
               }}>
                 <img
-                  src="https://kprofiles.com/wp-content/uploads/2025/01/KickFlip-1-2-scaled.jpeg"
+                  src={GROUP_BANNER_URL}
                   alt="KickFlip Official JYP Concept Photo"
                   style={{
                     width: '100%',
